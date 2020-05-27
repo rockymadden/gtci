@@ -7,7 +7,7 @@ class MaxSumSubArrayOfSizeK {
         for (int end = 0, start = 0, sum = 0; end < arr.length; end++) {
             sum += arr[end];
 
-            while (end - start + 1 == k) {
+            if (end - start + 1 == k) {
                 max = Math.max(max, sum);
                 sum -= arr[start];
                 start++;
