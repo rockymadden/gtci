@@ -2,7 +2,7 @@ package gtci.slidingwindow;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import static gtci.slidingwindow.MaxSumSubArrayOfSizeK.findMaxSumSubArray;
+import static gtci.slidingwindow.MaxSumSubArrayOfSizeK.*;
 
 public class MaxSumSubArrayOfSizeKTest {
     @Test
