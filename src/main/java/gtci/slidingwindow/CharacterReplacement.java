@@ -9,11 +9,11 @@ import java.util.*;
  */
 public class CharacterReplacement {
     private static boolean containsLessThanK(Map<Character, Integer> freq, int k) {
-        boolean can = false;
+        boolean fnd = false;
 
-        for (int val : freq.values()) can = val <= k || can;
+        for (int val : freq.values()) fnd = val <= k || fnd;
 
-        return can;
+        return fnd;
     }
 
     public static int findLength(String str, int k) {
