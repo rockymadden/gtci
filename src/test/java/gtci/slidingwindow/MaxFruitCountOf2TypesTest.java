@@ -1,6 +1,6 @@
 package gtci.slidingwindow;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import org.junit.Test;
 import static gtci.slidingwindow.MaxFruitCountOf2Types.*;
 
@@ -8,16 +8,16 @@ public class MaxFruitCountOf2TypesTest {
     @Test
     public void example1() {
         char[] arr = new char[] {'A', 'B', 'C', 'A', 'C'};
-        int output = findLength(arr);
+        int actual = findLength(arr);
 
-        assertEquals(output, 3);
+        assertEquals(3, actual);
     }
 
     @Test
     public void example2() {
         char[] arr = new char[] {'A', 'B', 'C', 'B', 'B', 'C'};
-        int output = findLength(arr);
+        int actual = findLength(arr);
 
-        assertEquals(output, 5);
+        assertEquals(5, actual);
     }
 }

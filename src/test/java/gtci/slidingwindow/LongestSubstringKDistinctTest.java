@@ -1,6 +1,6 @@
 package gtci.slidingwindow;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import org.junit.Test;
 import static gtci.slidingwindow.LongestSubstringKDistinct.*;
 
@@ -9,26 +9,26 @@ public class LongestSubstringKDistinctTest {
     public void example1() {
         String str = "araaci";
         int k = 2;
-        int output = findLength(str, k);
+        int actual = findLength(str, k);
 
-        assertEquals(output, 4);
+        assertEquals(4, actual);
     }
 
     @Test
     public void example2() {
         String str = "araaci";
         int k = 1;
-        int output = findLength(str, k);
+        int actual = findLength(str, k);
 
-        assertEquals(output, 2);
+        assertEquals(2, actual);
     }
 
     @Test
     public void example3() {
         String str = "cbbebi";
         int k = 3;
-        int output = findLength(str, k);
+        int actual = findLength(str, k);
 
-        assertEquals(output, 5);
+        assertEquals(5, actual);
     }
 }
