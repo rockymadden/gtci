@@ -9,10 +9,7 @@ public class RemoveDuplicates {
         int non = 1;
 
         for (int i = 1; i < arr.length; i++) {
-            if (arr[non - 1] != arr[i]) {
-                // System.out.println(arr[non - 1] + " != " + arr[i] + " so " + arr[non] + "(" + non + ")" + " = " + arr[i] + "(" + i + ")");
-                arr[non++] = arr[i];
-            }
+            if (arr[non - 1] != arr[i]) arr[non++] = arr[i];
         }
 
         return non;
