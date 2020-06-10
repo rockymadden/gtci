@@ -7,24 +7,24 @@ package gtci.twopointers;
  */
 public class TripletSumCloseToTarget {
     public static int searchTriplet(int[] arr, int targetSum) {
-        int n = arr.length;
-        int closest = -targetSum;
+        int n = arr.length, cdiff = Integer.MAX_VALUE;
 
         for (int i = 0; i < n - 2; i++) {
-            int left = i + 1;
-            int right = n - 1;
+            int left = i + 1, right = n - 1;
 
             while (left < right) {
-                int sum = arr[i] + arr[left] + arr[right];
+                int diff = targetSum - arr[i] - arr[left] - arr[right];
 
-                if (Math.abs(targetSum - sum) < Math.abs(targetSum - closest)) closest = sum;
+                if (diff == 0) return targetSum;
 
-                if (sum == targetSum) return targetSum;
-                else if (sum < targetSum) left++;
+                if (Math.abs(diff) < Math.abs(cdiff) || Math.abs(diff) == Math.abs(cdiff) && diff > cdiff)
+                    cdiff = diff;
+
+                if (diff > 0) left++;
                 else right--;
             }
         }
 
-        return closest;
+        return targetSum - cdiff;
     }
 }
