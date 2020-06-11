@@ -12,10 +12,10 @@ public class TripletSumToZeroTest {
         List<List<Integer>> actual = searchTriplets(arr);
         List<List<Integer>> expected = new ArrayList<>();
 
-        expected.add(new ArrayList<Integer>(Arrays.asList(-3, 1, 2)));
-        expected.add(new ArrayList<Integer>(Arrays.asList(-2, 0, 2)));
-        expected.add(new ArrayList<Integer>(Arrays.asList(-2, 1, 1)));
-        expected.add(new ArrayList<Integer>(Arrays.asList(-1, 0, 1)));
+        expected.add(Arrays.asList(-3, 1, 2));
+        expected.add(Arrays.asList(-2, 0, 2));
+        expected.add(Arrays.asList(-2, 1, 1));
+        expected.add(Arrays.asList(-1, 0, 1));
 
         assertEquals(expected, actual);
     }
@@ -26,8 +26,8 @@ public class TripletSumToZeroTest {
         List<List<Integer>> actual = searchTriplets(arr);
         List<List<Integer>> expected = new ArrayList<>();
 
-        expected.add(new ArrayList<Integer>(Arrays.asList(-5, 2, 3)));
-        expected.add(new ArrayList<Integer>(Arrays.asList(-2, -1, 3)));
+        expected.add(Arrays.asList(-5, 2, 3));
+        expected.add(Arrays.asList(-2, -1, 3));
 
         assertEquals(expected, actual);
     }

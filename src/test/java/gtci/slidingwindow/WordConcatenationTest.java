@@ -12,7 +12,7 @@ public class WordConcatenationTest {
         String[] words = new String[] {"cat", "fox"};
         List<Integer> actual = findWordConcatenation(str, words);
 
-        assertEquals(new ArrayList<Integer>(Arrays.asList(0 , 3)), actual);
+        assertEquals(Arrays.asList(0 , 3), actual);
     }
 
     @Test
@@ -21,6 +21,6 @@ public class WordConcatenationTest {
         String[] words = new String[] {"cat", "fox"};
         List<Integer> actual = findWordConcatenation(str, words);
 
-        assertEquals(new ArrayList<Integer>(Arrays.asList(3)), actual);
+        assertEquals(Arrays.asList(3), actual);
     }
 }
