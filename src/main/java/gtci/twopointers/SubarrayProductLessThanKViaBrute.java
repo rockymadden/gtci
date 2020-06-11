@@ -6,19 +6,20 @@ import java.util.*;
  * Given an array with positive numbers and a target number, find all of its contiguous subarrays
  * whose product is less than the target number.
  */
-public class SubarrayProductLessThanK {
+public class SubarrayProductLessThanKViaBrute {
     public static List<List<Integer>> findSubarrays(int[] arr, int target) {
         List<List<Integer>> subarrays = new ArrayList<>();
 
-        for (int right = 0, left = 0, product = 1; right < arr.length; right++) {
+        for (int i = 0; i < arr.length; i++) {
             List<Integer> nums = new ArrayList<>();
-            product *= arr[right];
+            int product = 1;
 
-            while (product >= target && left < arr.length) product /= arr[left++];
+            for (int j = i; j < arr.length; j++) {
+                product *= arr[j];
+                nums.add(arr[j]);
 
-            for (int i = right; i >= left; i--) {
-                nums.add(0, arr[i]);
-                subarrays.add(new ArrayList<>(nums));
+                if (product < target) subarrays.add(new ArrayList<>(nums));
+                else break;
             }
         }
 
