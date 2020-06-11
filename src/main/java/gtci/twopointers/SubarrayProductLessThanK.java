@@ -7,24 +7,18 @@ import java.util.*;
  * whose product is less than the target number.
  */
 public class SubarrayProductLessThanK {
-    private static int product(List<Integer> nums) {
-        int prd = 1;
-
-        for (int num : nums) prd *= num;
-
-        return prd;
-    }
-
     public static List<List<Integer>> findSubarrays(int[] arr, int target) {
         List<List<Integer>> subarrays = new ArrayList<>();
 
         for (int i = 0; i < arr.length; i++) {
             List<Integer> nums = new ArrayList<>();
+            int product = 1;
 
             for (int j = i; j < arr.length; j++) {
+                product *= arr[j];
                 nums.add(arr[j]);
 
-                if (product(nums) < target) subarrays.add(new ArrayList<>(nums));
+                if (product < target) subarrays.add(new ArrayList<>(nums));
                 else break;
             }
         }
