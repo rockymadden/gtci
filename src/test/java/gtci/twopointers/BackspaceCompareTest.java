@@ -40,4 +40,13 @@ public class BackspaceCompareTest {
 
         assertEquals(true, actual);
     }
+
+    @Test
+    public void custom1() {
+        String str1 = "";
+        String str2 = "a#";
+        boolean actual = compare(str1, str2);
+
+        assertEquals(true, actual);
+    }
 }

@@ -25,7 +25,7 @@ public class BackspaceCompare {
                 else break;
             }
 
-            if (c1 == '\0' || c2 == '\0' || c1 != c2) return false;
+            if (c1 != '\0' && c2 != '\0' && c1 != c2) return false;
         }
 
         return true;
