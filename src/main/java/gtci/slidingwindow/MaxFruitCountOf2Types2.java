@@ -16,16 +16,16 @@ import java.util.*;
  */
 public class MaxFruitCountOf2Types2 {
     public static int findLength(char[] arr) {
-        Map<Character, Integer> baskets = new HashMap<>();
+        final Map<Character, Integer> baskets = new HashMap<>();
         int max = 0;
 
         for (int end = 0, start = 0, cnt = 0; end < arr.length; end++) {
-            char endFruit = arr[end];
+            final char endFruit = arr[end];
             baskets.put(endFruit, baskets.getOrDefault(endFruit, 0) + 1);
             cnt++;
 
             while (baskets.size() > 2) {
-                char startFruit = arr[start];
+                final char startFruit = arr[start];
                 baskets.put(startFruit, baskets.get(startFruit) - 1);
                 if (baskets.get(startFruit) == 0) baskets.remove(startFruit);
                 start++;
