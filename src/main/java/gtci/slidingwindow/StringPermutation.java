@@ -26,17 +26,17 @@ public class StringPermutation {
     }
 
     public static boolean findPermutation(String str, String pattern) {
-        int[] cmp = new int[26], frq = new int[26];
-        int n = str.length(), m = pattern.length();
+        final int[] cmp = new int[26], frq = new int[26];
+        final int n = str.length(), m = pattern.length();
 
-        for (char ch : pattern.toCharArray()) cmp[ch - 'a']++;
+        for (final char ch : pattern.toCharArray()) cmp[ch - 'a']++;
 
         for (int end = 0, start = 0; end < n; end++) {
-            char endChar = str.charAt(end);
+            final char endChar = str.charAt(end);
             frq[endChar - 'a']++;
 
             if (end - start + 1 > m) {
-                char startChar = str.charAt(start);
+                final char startChar = str.charAt(start);
                 frq[startChar - 'a']--;
                 start++;
             }

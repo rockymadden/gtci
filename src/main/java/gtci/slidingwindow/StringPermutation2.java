@@ -22,7 +22,7 @@ public class StringPermutation2 {
     private static boolean isPerm(Map<Character, Integer> a, Map<Character, Integer> b) {
         if (a.size() != b.size()) return false;
 
-        for (Entry<Character, Integer> ent : a.entrySet()) {
+        for (final Entry<Character, Integer> ent : a.entrySet()) {
             if (b.getOrDefault(ent.getKey(), -1) != ent.getValue()) return false;
         }
 
@@ -32,7 +32,7 @@ public class StringPermutation2 {
     public static boolean findPermutation(String str, String pattern) {
         final Map<Character, Integer> pat = new HashMap<>();
         final Map<Character, Integer> acc = new HashMap<>();
-        int n = str.length(), m = pattern.length();
+        final int n = str.length(), m = pattern.length();
 
         for (int i = 0; i < m; i++) {
             pat.put(pattern.charAt(i), pat.getOrDefault(pattern.charAt(i), 0) + 1);

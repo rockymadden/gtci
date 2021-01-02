@@ -13,7 +13,7 @@ public class CharacterReplacement2 {
 
         boolean fnd = false;
 
-        for (int val : map.values()) fnd = val <= k || fnd;
+        for (final int val : map.values()) fnd = val <= k || fnd;
 
         return fnd;
     }

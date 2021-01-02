@@ -11,7 +11,7 @@ public class CharacterReplacement {
     private static boolean containsLessThanK(Map<Character, Integer> freq, int k) {
         boolean fnd = false;
 
-        for (int val : freq.values()) fnd = val <= k || fnd;
+        for (final int val : freq.values()) fnd = val <= k || fnd;
 
         return fnd;
     }
@@ -21,12 +21,12 @@ public class CharacterReplacement {
         int longest = 0;
 
         for (int end = 0, start = 0, cnt = 0; end < str.length(); end++) {
-            char endChar = str.charAt(end);
+            final char endChar = str.charAt(end);
             freq.put(endChar, freq.getOrDefault(endChar, 0) + 1);
             cnt++;
 
             while (freq.size() > 2 || (freq.size() == 2 && !containsLessThanK(freq, k))) {
-                char startChar = str.charAt(start);
+                final char startChar = str.charAt(start);
                 freq.put(startChar, freq.get(startChar) - 1);
                 if (freq.get(startChar) == 0) freq.remove(startChar);
                 cnt--;

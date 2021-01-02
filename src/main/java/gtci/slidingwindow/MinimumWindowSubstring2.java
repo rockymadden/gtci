@@ -11,7 +11,7 @@ public class MinimumWindowSubstring2 {
     private static boolean hasPat(Map<Character, Integer> acc, Map<Character, Integer> pat) {
         if (pat.size() > acc.size()) return false;
 
-        for (Entry<Character, Integer> ent : pat.entrySet()) {
+        for (final Entry<Character, Integer> ent : pat.entrySet()) {
             if (acc.getOrDefault(ent.getKey(), -1) < ent.getValue()) return false;
         }
 
@@ -21,7 +21,7 @@ public class MinimumWindowSubstring2 {
     public static String findSubstring(String str, String pattern) {
         final Map<Character, Integer> acc = new HashMap<>();
         final Map<Character, Integer> pat = new HashMap<>();
-        int n = str.length(), m = pattern.length();
+        final int n = str.length(), m = pattern.length();
         String ans = null;
 
         for (int i = 0; i < m; i++) {

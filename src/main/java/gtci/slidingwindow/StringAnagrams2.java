@@ -23,7 +23,7 @@ public class StringAnagrams2 {
     private static boolean isAnagram(Map<Character, Integer> a, Map<Character, Integer> b) {
         if (a.size() != b.size()) return false;
 
-        for (Entry<Character, Integer> ent : a.entrySet()) {
+        for (final Entry<Character, Integer> ent : a.entrySet()) {
             if (b.getOrDefault(ent.getKey(), -1) != ent.getValue()) return false;
         }
 
