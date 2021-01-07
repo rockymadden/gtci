@@ -7,13 +7,13 @@ package gtci.twopointers;
 public class SortedArraySquares {
 
     public static int[] makeSquares(int[] arr) {
-        int n = arr.length;
+        final int n = arr.length;
+        final int[] squares = new int[n];
         int left = 0, right = n - 1, i = n - 1;
-        int[] squares = new int[n];
 
         while (left <= right) {
-            int leftSq = arr[left] * arr[left];
-            int rightSq = arr[right] * arr[right];
+            final int leftSq = arr[left] * arr[left];
+            final int rightSq = arr[right] * arr[right];
 
             if (leftSq > rightSq) {
                 squares[i--] = leftSq;
@@ -26,6 +26,7 @@ public class SortedArraySquares {
 
         return squares;
     }
+
     /**
      * This is a straightforward question. The only trick is that we can have negative numbers in
      * the input array, which will make it a bit difficult to generate the output array with squares
@@ -43,13 +44,15 @@ public class SortedArraySquares {
      * next/previous number according to the pointer.
      */
     public static int[] makeSquaresRef(int[] arr) {
-        int n = arr.length;
-        int[] squares = new int[n];
+        final int n = arr.length;
+        final int[] squares = new int[n];
         int highestSquareIdx = n - 1;
         int left = 0, right = arr.length - 1;
+
         while (left <= right) {
             int leftSquare = arr[left] * arr[left];
             int rightSquare = arr[right] * arr[right];
+
             if (leftSquare > rightSquare) {
                 squares[highestSquareIdx--] = leftSquare;
                 left++;
@@ -58,6 +61,7 @@ public class SortedArraySquares {
                 right--;
             }
         }
+
         return squares;
     }
 }
