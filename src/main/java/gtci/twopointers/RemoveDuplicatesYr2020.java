@@ -4,7 +4,7 @@ package gtci.twopointers;
  * Given an array of sorted numbers, remove all duplicates from it. You should not use any extra
  * space; after removing the duplicates in-place return the new length of the array.
  */
-public class RemoveDuplicates {
+public class RemoveDuplicatesYr2020 {
     public static int remove(int[] arr) {
         int non = 1;
 
