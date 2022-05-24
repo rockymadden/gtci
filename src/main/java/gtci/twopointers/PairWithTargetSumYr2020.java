@@ -7,7 +7,7 @@ package gtci.twopointers;
  * Write a function to return the indices of the two numbers (i.e. the pair) such that they add up
  * to the given target.
  */
-public class PairWithTargetSum {
+public class PairWithTargetSumYr2020 {
     public static int[] search(int[] arr, int targetSum) {
         int left = 0, right = arr.length - 1;
 
